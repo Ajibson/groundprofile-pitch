@@ -1,0 +1,1259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GroundProfile — Investor Brief</title>
+  <meta name="description" content="GroundProfile is Africa's first premium agriculture media platform — an AI-powered editorial engine turning farming stories into investment-grade intelligence.">
+  <meta property="og:title" content="GroundProfile — Investor Brief">
+  <meta property="og:description" content="Africa's farmers feed the world. We make sure the world knows their names.">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,600;0,6..72,700;1,6..72,300;1,6..72,400;1,6..72,600;1,6..72,700&family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --green:         #00450d;
+      --green-mid:     #1b5e20;
+      --green-deep:    #001f08;
+      --gold:          #fcab28;
+      --gold-wash:     #fef6e4;
+      --surface:       #f8faf8;
+      --surface-low:   #f0f3f0;
+      --surface-cont:  #e8ebe8;
+      --on-surface:    #191c1b;
+      --on-surf-var:   #3d4a3c;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Work Sans', sans-serif;
+      background: var(--surface);
+      color: var(--on-surface);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ─── NAV ───────────────────────────────────────── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0;
+      z-index: 200;
+      height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 clamp(20px, 6vw, 80px);
+      background: rgba(0, 31, 8, 0.88);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+    }
+
+    .nav-logo {
+      font-family: 'Newsreader', serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #fff;
+      text-decoration: none;
+      letter-spacing: -0.01em;
+    }
+    .nav-logo span { color: var(--gold); }
+
+    .nav-links {
+      display: flex;
+      gap: 36px;
+      list-style: none;
+    }
+    .nav-links a {
+      color: rgba(255,255,255,.65);
+      text-decoration: none;
+      font-size: .825rem;
+      font-weight: 500;
+      transition: color .2s;
+    }
+    .nav-links a:hover { color: #fff; }
+
+    .nav-cta {
+      background: var(--gold);
+      color: #1a0f00;
+      font-weight: 700;
+      font-size: .8rem;
+      padding: 10px 22px;
+      border-radius: 6px;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: opacity .2s;
+    }
+    .nav-cta:hover { opacity: .88; }
+
+    @media (max-width: 780px) { .nav-links { display: none; } }
+
+    /* ─── HERO ───────────────────────────────────────── */
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 120px clamp(20px, 8vw, 120px) 90px;
+      background: linear-gradient(140deg, #001205 0%, #00360a 40%, #1b5e20 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* subtle dot grid texture */
+    #hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(circle, rgba(255,255,255,.05) 1px, transparent 1px);
+      background-size: 32px 32px;
+      pointer-events: none;
+    }
+
+    /* large ghost leaf */
+    #hero::after {
+      content: '';
+      position: absolute;
+      right: -80px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: min(600px, 60vw);
+      aspect-ratio: 1;
+      background: radial-gradient(ellipse at center, rgba(252,171,40,.07) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-label {
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 28px;
+    }
+
+    .hero-headline {
+      font-family: 'Newsreader', serif;
+      font-size: clamp(2.8rem, 6.5vw, 5.6rem);
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.06;
+      letter-spacing: -.025em;
+      max-width: 860px;
+      margin-bottom: 28px;
+    }
+
+    .hero-headline em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    .hero-sub {
+      font-size: clamp(1rem, 1.4vw, 1.2rem);
+      color: rgba(255,255,255,.65);
+      max-width: 560px;
+      line-height: 1.7;
+      font-weight: 300;
+      margin-bottom: 56px;
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 56px;
+      flex-wrap: wrap;
+      margin-bottom: 52px;
+    }
+
+    .hero-stat-val {
+      font-family: 'Newsreader', serif;
+      font-size: clamp(2.6rem, 4.5vw, 3.75rem);
+      font-weight: 700;
+      color: #fff;
+      line-height: 1;
+    }
+    .hero-stat-val sup { font-size: .5em; vertical-align: super; font-weight: 400; }
+
+    .hero-stat-lbl {
+      font-size: .75rem;
+      color: rgba(255,255,255,.45);
+      margin-top: 7px;
+      font-weight: 400;
+      letter-spacing: .04em;
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn-gold {
+      background: var(--gold);
+      color: #1a0f00;
+      font-weight: 700;
+      font-size: .9375rem;
+      padding: 14px 32px;
+      border-radius: 6px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: opacity .2s, transform .25s;
+    }
+    .btn-gold:hover { opacity: .9; transform: translateY(-2px); }
+
+    .btn-ghost {
+      background: transparent;
+      color: #fff;
+      font-weight: 600;
+      font-size: .9375rem;
+      padding: 14px 32px;
+      border-radius: 6px;
+      text-decoration: none;
+      border: 1.5px solid rgba(255,255,255,.28);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: border-color .2s, background .2s;
+    }
+    .btn-ghost:hover {
+      border-color: rgba(255,255,255,.65);
+      background: rgba(255,255,255,.06);
+    }
+
+    .hero-scroll {
+      position: absolute;
+      bottom: 36px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+    .hero-scroll-bar {
+      width: 1px;
+      height: 48px;
+      background: linear-gradient(to bottom, rgba(255,255,255,.4), transparent);
+      animation: pulse 2.2s ease-in-out infinite;
+    }
+    @keyframes pulse { 0%,100%{opacity:.3} 50%{opacity:1} }
+
+    /* ─── SHARED ─────────────────────────────────────── */
+    .container {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 clamp(20px, 5vw, 80px);
+    }
+
+    .section-eyebrow {
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+    .ey-green  { color: var(--green); }
+    .ey-gold   { color: var(--gold); }
+    .ey-ghost  { color: rgba(255,255,255,.45); }
+
+    /* ─── REVEAL ─────────────────────────────────────── */
+    .r {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity .75s ease, transform .75s ease;
+    }
+    .r.in { opacity: 1; transform: none; }
+    .d1 { transition-delay: .1s; }
+    .d2 { transition-delay: .2s; }
+    .d3 { transition-delay: .3s; }
+    .d4 { transition-delay: .4s; }
+    .d5 { transition-delay: .5s; }
+
+    /* ─── PROBLEM ────────────────────────────────────── */
+    #problem {
+      background: var(--green-deep);
+      padding: 110px 0;
+    }
+
+    .prob-intro {
+      font-family: 'Newsreader', serif;
+      font-size: clamp(1.75rem, 3.2vw, 2.75rem);
+      font-weight: 600;
+      color: #fff;
+      line-height: 1.22;
+      max-width: 740px;
+      margin-bottom: 64px;
+    }
+    .prob-intro em { font-style: italic; color: var(--gold); }
+
+    .prob-cards {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 2px;
+    }
+    @media (max-width: 760px) { .prob-cards { grid-template-columns: 1fr; } }
+
+    .prob-card {
+      background: rgba(255,255,255,.04);
+      padding: 40px 32px;
+    }
+    .prob-card:first-child { border-radius: 8px 0 0 8px; }
+    .prob-card:last-child  { border-radius: 0 8px 8px 0; }
+    @media (max-width: 760px) {
+      .prob-card:first-child { border-radius: 8px 8px 0 0; }
+      .prob-card:last-child  { border-radius: 0 0 8px 8px; }
+    }
+
+    .prob-num {
+      font-family: 'Newsreader', serif;
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: var(--gold);
+      opacity: .35;
+      line-height: 1;
+      margin-bottom: 22px;
+    }
+
+    .prob-title {
+      font-family: 'Newsreader', serif;
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 12px;
+      line-height: 1.25;
+    }
+
+    .prob-text {
+      font-size: .875rem;
+      color: rgba(255,255,255,.5);
+      line-height: 1.72;
+      font-weight: 300;
+    }
+
+    /* ─── PLATFORM ───────────────────────────────────── */
+    #platform { background: var(--surface); padding: 110px 0; }
+
+    .plat-intro {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: end;
+      margin-bottom: 72px;
+    }
+    @media (max-width: 760px) { .plat-intro { grid-template-columns: 1fr; gap: 28px; } }
+
+    .plat-headline {
+      font-family: 'Newsreader', serif;
+      font-size: clamp(2rem, 3.5vw, 3.1rem);
+      font-weight: 700;
+      color: var(--green);
+      line-height: 1.13;
+      letter-spacing: -.02em;
+    }
+
+    .plat-body {
+      font-size: .975rem;
+      line-height: 1.78;
+      color: var(--on-surf-var);
+    }
+    .plat-body + .plat-body { margin-top: 14px; }
+
+    .pillars {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 20px;
+    }
+    @media (max-width: 900px) { .pillars { grid-template-columns: 1fr; } }
+
+    .pillar {
+      background: var(--surface-cont);
+      border-radius: 8px;
+      padding: 40px 32px;
+      transition: transform .3s;
+    }
+    .pillar:hover { transform: translateY(-4px); }
+
+    .pillar-ico {
+      width: 50px; height: 50px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin-bottom: 24px;
+    }
+    .ico-g { background: rgba(0,69,13,.1); }
+    .ico-y { background: rgba(252,171,40,.15); }
+
+    .pillar-title {
+      font-family: 'Newsreader', serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--on-surface);
+      margin-bottom: 10px;
+    }
+
+    .pillar-text {
+      font-size: .875rem;
+      line-height: 1.72;
+      color: var(--on-surf-var);
+    }
+
+    .pillar-tag {
+      display: inline-block;
+      margin-top: 20px;
+      font-size: .68rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--green);
+      background: rgba(0,69,13,.08);
+      padding: 4px 10px;
+      border-radius: 4px;
+    }
+
+    /* ─── ENGINE ─────────────────────────────────────── */
+    #engine { background: var(--surface-low); padding: 110px 0; }
+
+    .engine-head {
+      font-family: 'Newsreader', serif;
+      font-size: clamp(1.75rem, 3vw, 2.5rem);
+      font-weight: 700;
+      color: var(--on-surface);
+      line-height: 1.2;
+      max-width: 620px;
+      margin-bottom: 52px;
+    }
+    .engine-head span { color: var(--green); }
+
+    /* pipeline */
+    .pipeline {
+      display: flex;
+      align-items: center;
+      margin-bottom: 52px;
+      overflow-x: auto;
+      padding-bottom: 12px;
+      gap: 0;
+    }
+
+    .pipe-step {
+      flex: 1;
+      min-width: 128px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .pipe-box {
+      background: #fff;
+      border-radius: 8px;
+      padding: 22px 14px 18px;
+      text-align: center;
+      box-shadow: 0 2px 20px rgba(25,28,27,.06);
+      width: 100%;
+      max-width: 138px;
+    }
+
+    .pipe-emoji { font-size: 1.6rem; margin-bottom: 8px; }
+
+    .pipe-lbl {
+      font-size: .72rem;
+      font-weight: 700;
+      color: var(--on-surface);
+      line-height: 1.3;
+    }
+    .pipe-sub {
+      font-size: .62rem;
+      color: var(--on-surf-var);
+      margin-top: 4px;
+      line-height: 1.4;
+    }
+
+    .pipe-arrow {
+      flex-shrink: 0;
+      padding: 0 10px;
+      font-size: 1.1rem;
+      color: var(--green);
+      opacity: .35;
+    }
+
+    /* engine feature list */
+    .engine-feats {
+      display: grid;
+      grid-template-columns: repeat(2,1fr);
+      gap: 14px;
+    }
+    @media (max-width: 640px) { .engine-feats { grid-template-columns: 1fr; } }
+
+    .efeat {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 20px;
+      background: #fff;
+      border-radius: 8px;
+    }
+
+    .efeat-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--green);
+      flex-shrink: 0;
+      margin-top: 5px;
+    }
+
+    .efeat-text {
+      font-size: .875rem;
+      line-height: 1.65;
+      color: var(--on-surf-var);
+    }
+    .efeat-text strong { color: var(--on-surface); font-weight: 600; }
+
+    /* ─── MARKET ─────────────────────────────────────── */
+    #market { background: var(--green); padding: 110px 0; }
+
+    .mkt-intro {
+      font-family: 'Newsreader', serif;
+      font-size: clamp(1.5rem, 2.8vw, 2.25rem);
+      font-weight: 400;
+      font-style: italic;
+      color: rgba(255,255,255,.75);
+      max-width: 700px;
+      margin-bottom: 64px;
+      line-height: 1.45;
+    }
+
+    .mkt-stats {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 2px;
+    }
+    @media (max-width: 760px) { .mkt-stats { grid-template-columns: 1fr; } }
+
+    .mkt-stat {
+      background: rgba(255,255,255,.06);
+      padding: 48px 36px;
+    }
+    .mkt-stat:first-child { border-radius: 8px 0 0 8px; }
+    .mkt-stat:last-child  { border-radius: 0 8px 8px 0; }
+    @media (max-width: 760px) {
+      .mkt-stat:first-child { border-radius: 8px 8px 0 0; }
+      .mkt-stat:last-child  { border-radius: 0 0 8px 8px; }
+    }
+
+    .mkt-val {
+      font-family: 'Newsreader', serif;
+      font-size: clamp(3rem, 5vw, 4.5rem);
+      font-weight: 700;
+      color: #fff;
+      line-height: 1;
+      margin-bottom: 14px;
+    }
+    .mkt-val sup { font-size: .45em; font-weight: 400; vertical-align: super; }
+
+    .mkt-lbl {
+      font-size: .95rem;
+      font-weight: 600;
+      color: var(--gold);
+      margin-bottom: 8px;
+    }
+
+    .mkt-sub {
+      font-size: .8rem;
+      color: rgba(255,255,255,.45);
+      line-height: 1.65;
+      font-weight: 300;
+    }
+
+    /* ─── MODEL ──────────────────────────────────────── */
+    #model { background: var(--surface); padding: 110px 0; }
+
+    .model-head {
+      font-family: 'Newsreader', serif;
+      font-size: clamp(1.75rem, 3vw, 2.5rem);
+      font-weight: 700;
+      color: var(--on-surface);
+      line-height: 1.2;
+      max-width: 580px;
+      margin-bottom: 52px;
+    }
+
+    .model-grid {
+      display: grid;
+      grid-template-columns: repeat(2,1fr);
+      gap: 20px;
+    }
+    @media (max-width: 640px) { .model-grid { grid-template-columns: 1fr; } }
+
+    .mcard {
+      background: var(--surface-cont);
+      border-radius: 8px;
+      padding: 36px 32px;
+    }
+
+    .mcard-ico { font-size: 2rem; margin-bottom: 16px; }
+
+    .mcard-title {
+      font-family: 'Newsreader', serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--on-surface);
+      margin-bottom: 10px;
+    }
+
+    .mcard-text {
+      font-size: .875rem;
+      color: var(--on-surf-var);
+      line-height: 1.72;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 18px;
+    }
+
+    .chip {
+      font-size: .68rem;
+      font-weight: 600;
+      letter-spacing: .04em;
+      background: rgba(0,69,13,.08);
+      color: var(--green);
+      padding: 4px 10px;
+      border-radius: 4px;
+    }
+
+    /* ─── TRACTION ───────────────────────────────────── */
+    #traction { background: var(--surface-low); padding: 110px 0; }
+
+    .tract-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+    @media (max-width: 760px) { .tract-grid { grid-template-columns: 1fr; gap: 48px; } }
+
+    .tract-head {
+      font-family: 'Newsreader', serif;
+      font-size: clamp(1.75rem, 3vw, 2.5rem);
+      font-weight: 700;
+      color: var(--on-surface);
+      line-height: 1.18;
+      margin-bottom: 14px;
+    }
+
+    .tract-sub {
+      font-size: .9rem;
+      color: var(--on-surf-var);
+      line-height: 1.75;
+      margin-bottom: 32px;
+    }
+
+    .checklist { display: flex; flex-direction: column; gap: 14px; }
+
+    .chk {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      font-size: .875rem;
+      color: var(--on-surf-var);
+      line-height: 1.55;
+    }
+
+    .chk-ico {
+      width: 22px; height: 22px;
+      border-radius: 50%;
+      background: var(--green);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .chk-ico svg {
+      width: 11px; height: 11px;
+      stroke: #fff;
+      fill: none;
+      stroke-width: 2.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .chk strong { color: var(--on-surface); font-weight: 600; }
+
+    /* ─── QUOTE ──────────────────────────────────────── */
+    #quote {
+      background: var(--gold-wash);
+      padding: 100px clamp(20px, 8vw, 120px);
+      text-align: center;
+    }
+
+    .pull-quote {
+      font-family: 'Newsreader', serif;
+      font-size: clamp(1.6rem, 3.5vw, 2.75rem);
+      font-style: italic;
+      font-weight: 400;
+      color: var(--green-mid);
+      line-height: 1.42;
+      max-width: 880px;
+      margin: 0 auto 24px;
+    }
+
+    .quote-attr {
+      font-size: .78rem;
+      font-weight: 700;
+      color: var(--on-surf-var);
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    /* ─── CTA ────────────────────────────────────────── */
+    #cta {
+      background: linear-gradient(140deg, #001205 0%, #00450d 100%);
+      padding: 120px clamp(20px, 8vw, 120px);
+      text-align: center;
+    }
+
+    .cta-head {
+      font-family: 'Newsreader', serif;
+      font-size: clamp(2rem, 4.5vw, 3.75rem);
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.12;
+      letter-spacing: -.025em;
+      margin-bottom: 22px;
+    }
+
+    .cta-sub {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,.6);
+      max-width: 560px;
+      margin: 0 auto 48px;
+      line-height: 1.72;
+      font-weight: 300;
+    }
+
+    .cta-btns {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .cta-note {
+      margin-top: 32px;
+      font-size: .82rem;
+      color: rgba(255,255,255,.35);
+    }
+    .cta-note a {
+      color: rgba(255,255,255,.65);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+    .cta-note a:hover { color: #fff; }
+
+    /* ─── FOOTER ─────────────────────────────────────── */
+    footer {
+      background: var(--green-deep);
+      padding: 36px clamp(20px, 5vw, 80px);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .foot-logo {
+      font-family: 'Newsreader', serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: rgba(255,255,255,.45);
+    }
+    .foot-logo span { color: var(--gold); }
+
+    .foot-copy {
+      font-size: .75rem;
+      color: rgba(255,255,255,.25);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ─── NAV ─────────────────────────────────────────────── -->
+  <nav>
+    <a href="#hero" class="nav-logo">Ground<span>Profile</span></a>
+    <ul class="nav-links">
+      <li><a href="#problem">The Problem</a></li>
+      <li><a href="#platform">Platform</a></li>
+      <li><a href="#engine">Technology</a></li>
+      <li><a href="#market">Market</a></li>
+      <li><a href="#traction">Traction</a></li>
+    </ul>
+    <a href="mailto:azeez@farmpady.com?subject=GroundProfile%20%E2%80%94%20Investor%20Inquiry" class="nav-cta">Request Deck →</a>
+  </nav>
+
+  <!-- ─── HERO ─────────────────────────────────────────────── -->
+  <section id="hero">
+    <p class="hero-label">Africa Agriculture Media &nbsp;·&nbsp; Investor Brief &nbsp;·&nbsp; 2026</p>
+    <h1 class="hero-headline">
+      Africa's farmers<br>
+      feed the world.<br>
+      <em>We make sure the<br>world knows their names.</em>
+    </h1>
+    <p class="hero-sub">
+      GroundProfile is Africa's first premium agriculture media platform — an automated,
+      AI-powered editorial engine that turns farming stories into investment-grade intelligence.
+    </p>
+
+    <div class="hero-stats">
+      <div>
+        <div class="hero-stat-val">
+          <span class="counter" data-target="600">0</span>M<sup>+</sup>
+        </div>
+        <div class="hero-stat-lbl">farmers across Africa</div>
+      </div>
+      <div>
+        <div class="hero-stat-val">
+          $<span class="counter" data-target="300">0</span>B<sup>+</sup>
+        </div>
+        <div class="hero-stat-lbl">agriculture GDP annually</div>
+      </div>
+      <div>
+        <div class="hero-stat-val">0</div>
+        <div class="hero-stat-lbl">premium media outlets serving it</div>
+      </div>
+    </div>
+
+    <div class="hero-ctas">
+      <a href="mailto:azeez@farmpady.com?subject=GroundProfile%20%E2%80%94%20Deck%20Request" class="btn-gold">
+        Request the Deck &nbsp;↗
+      </a>
+      <a href="#problem" class="btn-ghost">
+        See the Opportunity &nbsp;↓
+      </a>
+    </div>
+
+    <div class="hero-scroll">
+      <div class="hero-scroll-bar"></div>
+    </div>
+  </section>
+
+  <!-- ─── PROBLEM ───────────────────────────────────────────── -->
+  <section id="problem">
+    <div class="container">
+      <p class="section-eyebrow ey-ghost r">The Problem</p>
+      <h2 class="prob-intro r">
+        Africa doesn't have<br>an agriculture problem.<br>
+        It has a <em>visibility problem.</em>
+      </h2>
+      <div class="prob-cards">
+        <div class="prob-card r d1">
+          <div class="prob-num">01</div>
+          <h3 class="prob-title">Farmers are invisible</h3>
+          <p class="prob-text">600 million Africans work in agriculture. The people growing the continent's food have no media profile, no digital presence, and no clear path to attracting the capital their work deserves.</p>
+        </div>
+        <div class="prob-card r d2">
+          <div class="prob-num">02</div>
+          <h3 class="prob-title">Capital is disconnected</h3>
+          <p class="prob-text">Impact investors, agri-fintechs, input suppliers, and development finance institutions have no reliable channel to discover and engage with farmers at scale. The stories that could unlock billions go untold.</p>
+        </div>
+        <div class="prob-card r d3">
+          <div class="prob-num">03</div>
+          <h3 class="prob-title">Media is failing the sector</h3>
+          <p class="prob-text">The few agriculture outlets in Africa are government bulletins or narrow trade press. None are building farmer-centric, editorially excellent content for the modern internet. The gap is enormous and growing.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── PLATFORM ─────────────────────────────────────────── -->
+  <section id="platform">
+    <div class="container">
+      <div class="plat-intro">
+        <div>
+          <p class="section-eyebrow ey-green r">The Solution</p>
+          <h2 class="plat-headline r">
+            The Bloomberg<br>of African<br>agriculture.
+          </h2>
+        </div>
+        <div>
+          <p class="plat-body r">
+            GroundProfile combines premium editorial storytelling with automated intelligence infrastructure.
+            Think of us as part <em>The Economist</em>, part LinkedIn, part Reuters —
+            built exclusively for the people who grow Africa's food and the investors who want to reach them.
+          </p>
+          <p class="plat-body r d1" style="margin-top:14px;">
+            Every farmer gets a profile. Every story gets a face. Every insight reaches an audience that can act on it.
+          </p>
+        </div>
+      </div>
+
+      <div class="pillars">
+        <div class="pillar r d1">
+          <div class="pillar-ico ico-g">🌾</div>
+          <h3 class="pillar-title">Farmer Spotlight</h3>
+          <p class="pillar-text">
+            Editorial-grade farmer profiles — deeper than LinkedIn, more human than a data report. Journey narratives, farm statistics, verified location, and impact metrics that make farmers legible to investors.
+          </p>
+          <span class="pillar-tag">Profile · Discover · Connect</span>
+        </div>
+        <div class="pillar r d2">
+          <div class="pillar-ico ico-y">📡</div>
+          <h3 class="pillar-title">News Intelligence</h3>
+          <p class="pillar-text">
+            Real-time agri news aggregated from 30+ RSS feeds and 3 social platforms — automatically harvested, AI-reviewed for quality and Africa relevance, and published the moment it breaks.
+          </p>
+          <span class="pillar-tag">Policy · Markets · Science · Innovation</span>
+        </div>
+        <div class="pillar r d3">
+          <div class="pillar-ico ico-g">📖</div>
+          <h3 class="pillar-title">Stories</h3>
+          <p class="pillar-text">
+            Long-form editorial content where every article is tied to a real farmer and a real impact. Not generic "agriculture news" — stories of innovation and resilience that invite readers to care and invest.
+          </p>
+          <span class="pillar-tag">Editorial · Narrative · Impact</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── ENGINE ────────────────────────────────────────────── -->
+  <section id="engine">
+    <div class="container">
+      <p class="section-eyebrow ey-green r">The Technology</p>
+      <h2 class="engine-head r">
+        An editorial engine powered by automation.
+        <span>Scale without proportional cost.</span>
+      </h2>
+
+      <!-- pipeline diagram -->
+      <div class="pipeline r">
+        <div class="pipe-step">
+          <div class="pipe-box">
+            <div class="pipe-emoji">📱</div>
+            <div class="pipe-lbl">Social Harvest</div>
+            <div class="pipe-sub">TikTok · Facebook<br>Instagram</div>
+          </div>
+        </div>
+        <div class="pipe-arrow">→</div>
+        <div class="pipe-step">
+          <div class="pipe-box">
+            <div class="pipe-emoji">📰</div>
+            <div class="pipe-lbl">RSS Feeds</div>
+            <div class="pipe-sub">30+ active sources<br>FAO · CGIAR · AGRA</div>
+          </div>
+        </div>
+        <div class="pipe-arrow">→</div>
+        <div class="pipe-step">
+          <div class="pipe-box">
+            <div class="pipe-emoji">🤖</div>
+            <div class="pipe-lbl">AI Review</div>
+            <div class="pipe-sub">Quality · Relevance<br>Africa impact score</div>
+          </div>
+        </div>
+        <div class="pipe-arrow">→</div>
+        <div class="pipe-step">
+          <div class="pipe-box">
+            <div class="pipe-emoji">✍️</div>
+            <div class="pipe-lbl">Editorial CMS</div>
+            <div class="pipe-sub">Approve · Promote<br>Publish</div>
+          </div>
+        </div>
+        <div class="pipe-arrow">→</div>
+        <div class="pipe-step">
+          <div class="pipe-box">
+            <div class="pipe-emoji">🌍</div>
+            <div class="pipe-lbl">Readers</div>
+            <div class="pipe-sub">Investors · Partners<br>Farmers</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="engine-feats">
+        <div class="efeat r d1">
+          <div class="efeat-dot"></div>
+          <p class="efeat-text">
+            <strong>Automated Farmer Scouting</strong> — The platform continuously discovers active farmers across social media, generates editorial profile drafts, and queues them for human review. Zero cold outreach needed.
+          </p>
+        </div>
+        <div class="efeat r d2">
+          <div class="efeat-dot"></div>
+          <p class="efeat-text">
+            <strong>AI Editorial Review</strong> — Every harvested news item is automatically scored for quality, agricultural relevance, and Africa impact before an editor ever sees it.
+          </p>
+        </div>
+        <div class="efeat r d3">
+          <div class="efeat-dot"></div>
+          <p class="efeat-text">
+            <strong>30+ Integrated News Sources</strong> — FAO, CGIAR, AGRA, Ventures Africa, The Africa Report, Google News regional searches, and LinkedIn-indexed content — configured and ready.
+          </p>
+        </div>
+        <div class="efeat r d4">
+          <div class="efeat-dot"></div>
+          <p class="efeat-text">
+            <strong>Multi-Platform Social Harvesting</strong> — TikTok, Facebook, and Instagram monitored continuously using targeted agricultural hashtags, keywords, and scout queries.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── MARKET ────────────────────────────────────────────── -->
+  <section id="market">
+    <div class="container">
+      <p class="section-eyebrow ey-gold r">Market Opportunity</p>
+      <p class="mkt-intro r">
+        Africa is the world's last great agricultural frontier —
+        and it is almost entirely uncovered by premium media.
+      </p>
+      <div class="mkt-stats">
+        <div class="mkt-stat r d1">
+          <div class="mkt-val">$<span class="ctr-mkt" data-target="300">0</span>B<sup>+</sup></div>
+          <div class="mkt-lbl">Total Addressable Market</div>
+          <div class="mkt-sub">Africa's annual agriculture GDP. The brands, institutions, and governments operating in this space need media to reach it — and currently have nowhere to go.</div>
+        </div>
+        <div class="mkt-stat r d2">
+          <div class="mkt-val"><span class="ctr-mkt" data-target="600">0</span>M<sup>+</sup></div>
+          <div class="mkt-lbl">Underserved Audience</div>
+          <div class="mkt-sub">People involved in African agriculture — farmers, traders, extension workers, agribusiness operators — with no dedicated premium media serving their world.</div>
+        </div>
+        <div class="mkt-stat r d3">
+          <div class="mkt-val"><span class="ctr-mkt" data-target="18">0</span>%<sup>+</sup></div>
+          <div class="mkt-lbl">Digital Ad Growth YoY</div>
+          <div class="mkt-sub">Africa's digital advertising market is growing 18% year-on-year. Agri-sector brands have no premium digital channel for placement. We are building that channel.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── BUSINESS MODEL ────────────────────────────────────── -->
+  <section id="model">
+    <div class="container">
+      <p class="section-eyebrow ey-green r">Business Model</p>
+      <h2 class="model-head r">
+        Four revenue streams.<br>
+        One unfair advantage: the audience.
+      </h2>
+      <div class="model-grid">
+        <div class="mcard r d1">
+          <div class="mcard-ico">🤝</div>
+          <h3 class="mcard-title">Brand Partnerships</h3>
+          <p class="mcard-text">
+            Sponsored farmer stories, branded intelligence reports, and newsletter placements for agri-input brands, banks, and fintechs who need to reach farmers and agribusiness audiences. Premium content commands premium rates.
+          </p>
+          <div class="chips">
+            <span class="chip">Agri-input brands</span>
+            <span class="chip">Rural banks</span>
+            <span class="chip">Agri-fintechs</span>
+            <span class="chip">NGOs</span>
+          </div>
+        </div>
+        <div class="mcard r d2">
+          <div class="mcard-ico">📊</div>
+          <h3 class="mcard-title">Intelligence Subscriptions</h3>
+          <p class="mcard-text">
+            A structured data dashboard giving agribusinesses, development finance institutions, and research bodies access to curated farmer profiles, market signals, and news trends across Africa. Recurring B2B revenue.
+          </p>
+          <div class="chips">
+            <span class="chip">DFIs</span>
+            <span class="chip">Research orgs</span>
+            <span class="chip">Commodity traders</span>
+          </div>
+        </div>
+        <div class="mcard r d3">
+          <div class="mcard-ico">🌟</div>
+          <h3 class="mcard-title">Farmer Investment Profiles</h3>
+          <p class="mcard-text">
+            Premium editorial profiles built specifically for investor audiences. Verified identity, structured farm data, impact metrics, and editorial distribution to our investor readership. The LinkedIn Premium of African farming.
+          </p>
+          <div class="chips">
+            <span class="chip">Impact investors</span>
+            <span class="chip">Agri-VCs</span>
+            <span class="chip">Cooperatives</span>
+          </div>
+        </div>
+        <div class="mcard r d4">
+          <div class="mcard-ico">📨</div>
+          <h3 class="mcard-title">Newsletter Monetisation</h3>
+          <p class="mcard-text">
+            A curated weekly briefing to decision-makers in African agriculture. As the list grows, newsletter sponsorships, classified placements, and deal-flow alerts become a high-margin recurring revenue line.
+          </p>
+          <div class="chips">
+            <span class="chip">Weekly briefing</span>
+            <span class="chip">Sponsored slots</span>
+            <span class="chip">Deal flow alerts</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── TRACTION ──────────────────────────────────────────── -->
+  <section id="traction">
+    <div class="container">
+      <div class="tract-grid">
+        <div>
+          <p class="section-eyebrow ey-green r">Where We Are</p>
+          <h2 class="tract-head r">
+            Infrastructure built.<br>Engine ready.<br>Raising to launch.
+          </h2>
+          <p class="tract-sub r">
+            We built the full platform before seeking capital. The editorial suite,
+            content pipeline, and automation engine are complete. We are raising
+            to take GroundProfile public and grow the audience it deserves.
+          </p>
+          <a href="mailto:azeez@farmpady.com?subject=GroundProfile%20%E2%80%94%20Schedule%20a%20Call" class="btn-gold r" style="display:inline-flex;">
+            Schedule a Call →
+          </a>
+        </div>
+        <div class="checklist">
+          <div class="chk r">
+            <div class="chk-ico"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <span><strong>Full editorial platform built</strong> — Articles, Farmer Spotlights, News Intelligence Hub, and Explore — complete and ready for public launch</span>
+          </div>
+          <div class="chk r d1">
+            <div class="chk-ico"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <span><strong>Admin editorial CMS</strong> — Harvest inbox, AI review queue, publish pipeline, source management, and run history</span>
+          </div>
+          <div class="chk r d2">
+            <div class="chk-ico"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <span><strong>30+ integrated news sources</strong> — RSS feeds from FAO, CGIAR, AGRA, regional outlets, and Google News indexed content</span>
+          </div>
+          <div class="chk r d3">
+            <div class="chk-ico"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <span><strong>Social media harvesting</strong> — Active pipelines on TikTok, Facebook, and Instagram with agricultural keyword targeting</span>
+          </div>
+          <div class="chk r d4">
+            <div class="chk-ico"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <span><strong>AI review pipeline</strong> — Automated quality scoring, relevance classification, and Africa-impact detection on all harvested content</span>
+          </div>
+          <div class="chk r d5">
+            <div class="chk-ico"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <span><strong>Farmer discovery engine</strong> — Scouts social media, auto-generates editorial profile drafts, queues for human review</span>
+          </div>
+          <div class="chk r d5">
+            <div class="chk-ico"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <span><strong>Authenticated REST API</strong> — Full backend ready for mobile expansion, partner integrations, and data licensing</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── QUOTE ─────────────────────────────────────────────── -->
+  <section id="quote">
+    <div class="r">
+      <p class="pull-quote">
+        "Every farmer has a story worth telling. Most of the world just hasn't had
+        the right publication to read it in."
+      </p>
+      <p class="quote-attr">GroundProfile &nbsp;·&nbsp; Mission</p>
+    </div>
+  </section>
+
+  <!-- ─── CTA ──────────────────────────────────────────────── -->
+  <section id="cta">
+    <div class="r">
+      <h2 class="cta-head">
+        We've built the media<br>
+        infrastructure for Africa's<br>
+        most important industry.
+      </h2>
+      <p class="cta-sub">
+        If you believe Africa's agriculture story deserves to be told — and that the people
+        who tell it best will own an enormous media opportunity — let's talk.
+      </p>
+      <div class="cta-btns">
+        <a href="mailto:azeez@farmpady.com?subject=GroundProfile%20%E2%80%94%20Deck%20Request" class="btn-gold">
+          Request the Full Deck &nbsp;↗
+        </a>
+        <a href="mailto:azeez@farmpady.com?subject=GroundProfile%20%E2%80%94%20Let%27s%20Talk" class="btn-ghost">
+          Schedule a Call
+        </a>
+      </div>
+      <p class="cta-note">
+        Or reach us directly at <a href="mailto:azeez@farmpady.com">azeez@farmpady.com</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- ─── FOOTER ────────────────────────────────────────────── -->
+  <footer>
+    <div class="foot-logo">Ground<span>Profile</span></div>
+    <div class="foot-copy">© 2026 GroundProfile. Africa's Agriculture Media Platform.</div>
+  </footer>
+
+  <script>
+    // ── Reveal on scroll ──────────────────────────────────────
+    const revealObs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('in');
+          revealObs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.14 });
+
+    document.querySelectorAll('.r').forEach(el => revealObs.observe(el));
+
+    // ── Counter animation ─────────────────────────────────────
+    function animateCount(el, target, duration = 1600) {
+      let start = null;
+      function step(ts) {
+        if (!start) start = ts;
+        const progress = Math.min((ts - start) / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3); // ease-out cubic
+        el.textContent = Math.floor(eased * target);
+        if (progress < 1) requestAnimationFrame(step);
+        else el.textContent = target;
+      }
+      requestAnimationFrame(step);
+    }
+
+    // Hero counters — start after short delay on load
+    window.addEventListener('DOMContentLoaded', () => {
+      setTimeout(() => {
+        document.querySelectorAll('.counter').forEach(el => {
+          animateCount(el, parseInt(el.dataset.target), 1800);
+        });
+      }, 500);
+    });
+
+    // Market counters — start when section enters view
+    const mktObs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.querySelectorAll('.ctr-mkt').forEach(el => {
+            animateCount(el, parseInt(el.dataset.target), 1400);
+          });
+          mktObs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.25 });
+
+    const mktSection = document.getElementById('market');
+    if (mktSection) mktObs.observe(mktSection);
+
+    // ── Nav active state on scroll ────────────────────────────
+    const sections = document.querySelectorAll('section[id]');
+    const navAnchors = document.querySelectorAll('.nav-links a');
+
+    const navObs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          navAnchors.forEach(a => {
+            const active = a.getAttribute('href') === `#${e.target.id}`;
+            a.style.color = active ? '#fff' : 'rgba(255,255,255,.55)';
+          });
+        }
+      });
+    }, { threshold: 0.45 });
+
+    sections.forEach(s => navObs.observe(s));
+  </script>
+</body>
+</html>
