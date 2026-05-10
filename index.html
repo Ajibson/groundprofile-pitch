@@ -333,6 +333,51 @@
       font-weight: 300;
     }
 
+    /* ─── WHY NOW ────────────────────────────────────── */
+    #why-now { background: var(--surface-low); padding: 110px 0; }
+
+    .why-head {
+      font-family: 'Newsreader', serif;
+      font-size: clamp(1.75rem, 3vw, 2.5rem);
+      font-weight: 700;
+      color: var(--on-surface);
+      line-height: 1.2;
+      max-width: 680px;
+      margin-bottom: 48px;
+    }
+    .why-head span { color: var(--green); }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    @media (max-width: 900px) { .why-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 560px) { .why-grid { grid-template-columns: 1fr; } }
+
+    .why-card {
+      background: #fff;
+      border-radius: 8px;
+      padding: 28px 24px;
+      border-left: 3px solid var(--green);
+    }
+
+    .why-ico { font-size: 1.4rem; margin-bottom: 10px; }
+
+    .why-title {
+      font-family: 'Newsreader', serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--on-surface);
+      margin-bottom: 8px;
+    }
+
+    .why-text {
+      font-size: .82rem;
+      color: var(--on-surf-var);
+      line-height: 1.65;
+    }
+
     /* ─── PLATFORM ───────────────────────────────────── */
     #platform { background: var(--surface); padding: 110px 0; }
 
@@ -413,6 +458,73 @@
       background: rgba(0,69,13,.08);
       padding: 4px 10px;
       border-radius: 4px;
+    }
+
+    /* expansion path */
+    .expand-path {
+      margin-top: 52px;
+      background: var(--green-deep);
+      border-radius: 10px;
+      padding: 36px 40px;
+    }
+
+    .expand-label {
+      font-size: .68rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.4);
+      margin-bottom: 22px;
+    }
+
+    .expand-steps {
+      display: flex;
+      align-items: flex-start;
+      gap: 0;
+      flex-wrap: wrap;
+      row-gap: 16px;
+    }
+
+    .expand-step {
+      flex: 1;
+      min-width: 140px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .expand-tag {
+      font-size: .62rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.35);
+      margin-bottom: 2px;
+    }
+
+    .expand-now .expand-tag { color: var(--gold); }
+
+    .expand-step strong {
+      font-family: 'Newsreader', serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.25;
+    }
+
+    .expand-now strong { color: var(--gold); }
+
+    .expand-step span {
+      font-size: .72rem;
+      color: rgba(255,255,255,.45);
+    }
+
+    .expand-arrow {
+      font-size: 1rem;
+      color: rgba(255,255,255,.25);
+      padding: 0 16px;
+      padding-top: 6px;
+      flex-shrink: 0;
     }
 
     /* ─── ENGINE ─────────────────────────────────────── */
@@ -627,6 +739,72 @@
       border-radius: 4px;
     }
 
+    /* revenue sequence */
+    .rev-seq {
+      margin-top: 48px;
+      padding: 32px 36px;
+      background: var(--surface-cont);
+      border-radius: 10px;
+    }
+
+    .rev-seq-label {
+      font-size: .68rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--on-surf-var);
+      margin-bottom: 20px;
+    }
+
+    .rev-seq-steps {
+      display: flex;
+      gap: 0;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      row-gap: 20px;
+    }
+
+    .rev-step { flex: 1; min-width: 180px; }
+
+    .rev-phase {
+      font-size: .75rem;
+      font-weight: 700;
+      color: var(--green);
+      margin-bottom: 10px;
+      letter-spacing: .04em;
+    }
+
+    .rev-streams {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .rev-streams span {
+      font-size: .8rem;
+      color: var(--on-surf-var);
+      line-height: 1.4;
+      padding-left: 12px;
+      position: relative;
+    }
+
+    .rev-streams span::before {
+      content: '·';
+      position: absolute;
+      left: 0;
+      color: var(--green);
+      font-weight: 700;
+    }
+
+    .rev-div {
+      font-size: .9rem;
+      color: var(--on-surf-var);
+      opacity: .3;
+      padding: 0 20px;
+      padding-top: 2px;
+      flex-shrink: 0;
+    }
+
     /* ─── TRACTION ───────────────────────────────────── */
     #traction { background: var(--surface-low); padding: 110px 0; }
 
@@ -684,6 +862,40 @@
       stroke-linejoin: round;
     }
     .chk strong { color: var(--on-surface); font-weight: 600; }
+
+    /* fund use */
+    .fund-label {
+      font-size: .68rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--on-surf-var);
+      margin-bottom: 12px;
+    }
+
+    .fund-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .fund-list li {
+      font-size: .82rem;
+      color: var(--on-surf-var);
+      padding-left: 18px;
+      position: relative;
+      line-height: 1.45;
+    }
+
+    .fund-list li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--green);
+      font-weight: 700;
+      font-size: .75rem;
+    }
 
     /* ─── QUOTE ──────────────────────────────────────── */
     #quote {
@@ -788,6 +1000,7 @@
     <a href="#hero" class="nav-logo">Ground<span>Profile</span></a>
     <ul class="nav-links">
       <li><a href="#problem">The Problem</a></li>
+      <li><a href="#why-now">Why Now</a></li>
       <li><a href="#platform">Platform</a></li>
       <li><a href="#engine">Technology</a></li>
       <li><a href="#market">Market</a></li>
@@ -805,8 +1018,7 @@
       <em>We make sure the<br>world knows their names.</em>
     </h1>
     <p class="hero-sub">
-      GroundProfile is Africa's first premium agriculture media platform — an automated,
-      AI-powered editorial engine that turns farming stories into investment-grade intelligence.
+      A platform where African farmers build public profiles, share their stories, and get discovered by investors, brands, and buyers — powered by an AI editorial engine that turns those stories into investment-grade intelligence.
     </p>
 
     <div class="hero-stats">
@@ -870,6 +1082,49 @@
     </div>
   </section>
 
+  <!-- ─── WHY NOW ────────────────────────────────────────────── -->
+  <section id="why-now">
+    <div class="container">
+      <p class="section-eyebrow ey-green r">Why Now</p>
+      <h2 class="why-head r">
+        Six forces are converging.<br>
+        <span>The window is open today.</span>
+      </h2>
+      <div class="why-grid">
+        <div class="why-card r d1">
+          <div class="why-ico">🌍</div>
+          <h3 class="why-title">Africa's Digital Leap</h3>
+          <p class="why-text">Smartphone penetration is accelerating across sub-Saharan Africa. Rural farmers are coming online for the first time — and there is no platform built for them.</p>
+        </div>
+        <div class="why-card r d2">
+          <div class="why-ico">🤖</div>
+          <h3 class="why-title">AI Makes Editorial Cheap</h3>
+          <p class="why-text">The cost of producing, curating, and distributing editorial content has collapsed. A lean team can now do what required a newsroom of thirty. The content moat is buildable today.</p>
+        </div>
+        <div class="why-card r d3">
+          <div class="why-ico">💸</div>
+          <h3 class="why-title">Capital Chasing Agriculture</h3>
+          <p class="why-text">DFIs, climate funds, and agri-VCs are deploying billions into African agriculture. That capital has no media layer to discover, validate, or amplify the farmers it's trying to reach.</p>
+        </div>
+        <div class="why-card r d4">
+          <div class="why-ico">🌾</div>
+          <h3 class="why-title">Young Africans Entering Farming</h3>
+          <p class="why-text">A new generation — the most connected in African history — is entering agriculture. They will demand digital identity, media presence, and market connections that their parents never had.</p>
+        </div>
+        <div class="why-card r d5">
+          <div class="why-ico">📢</div>
+          <h3 class="why-title">Global Food Security Moment</h3>
+          <p class="why-text">Food security is a top-of-agenda conversation globally. Africa is central to that story. Investors, governments, and consumers are primed to engage with African farming content like never before.</p>
+        </div>
+        <div class="why-card r d5">
+          <div class="why-ico">🎥</div>
+          <h3 class="why-title">Creator Economy Ignoring Agriculture</h3>
+          <p class="why-text">The creator economy is generating billions — but agriculture has no dedicated home. Farmers documenting their work on TikTok and Instagram have nowhere to convert content into professional identity or income.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ─── PLATFORM ─────────────────────────────────────────── -->
   <section id="platform">
     <div class="container">
@@ -882,12 +1137,13 @@
         </div>
         <div>
           <p class="plat-body r">
-            GroundProfile combines premium editorial storytelling with automated intelligence infrastructure.
-            Think of us as part <em>The Economist</em>, part LinkedIn, part Reuters —
-            built exclusively for the people who grow Africa's food and the investors who want to reach them.
+            We start with one clear wedge: the public profile and media layer for African farmers.
+            Think LinkedIn meets <em>The Economist</em> — built exclusively for the people who grow Africa's food
+            and the investors, brands, and buyers who want to reach them.
           </p>
           <p class="plat-body r d1" style="margin-top:14px;">
             Every farmer gets a profile. Every story gets a face. Every insight reaches an audience that can act on it.
+            That audience is the foundation for everything that follows.
           </p>
         </div>
       </div>
@@ -916,6 +1172,35 @@
             Long-form editorial content where every article is tied to a real farmer and a real impact. Not generic "agriculture news" — stories of innovation and resilience that invite readers to care and invest.
           </p>
           <span class="pillar-tag">Editorial · Narrative · Impact</span>
+        </div>
+      </div>
+
+      <div class="expand-path r">
+        <p class="expand-label">The expansion path</p>
+        <div class="expand-steps">
+          <div class="expand-step expand-now">
+            <span class="expand-tag">Launch</span>
+            <strong>Farmer Profiles + Media</strong>
+            <span>Public identity layer</span>
+          </div>
+          <div class="expand-arrow">→</div>
+          <div class="expand-step">
+            <span class="expand-tag">Year 2</span>
+            <strong>Brand Discovery</strong>
+            <span>Brands + NGOs find farmers</span>
+          </div>
+          <div class="expand-arrow">→</div>
+          <div class="expand-step">
+            <span class="expand-tag">Year 3</span>
+            <strong>Intelligence + Data</strong>
+            <span>B2B subscriptions</span>
+          </div>
+          <div class="expand-arrow">→</div>
+          <div class="expand-step">
+            <span class="expand-tag">Scale</span>
+            <strong>Marketplace + Finance</strong>
+            <span>Commerce + capital layer</span>
+          </div>
         </div>
       </div>
     </div>
@@ -1024,7 +1309,7 @@
         <div class="mkt-stat r d3">
           <div class="mkt-val"><span class="ctr-mkt" data-target="18">0</span>%<sup>+</sup></div>
           <div class="mkt-lbl">Digital Ad Growth YoY</div>
-          <div class="mkt-sub">Africa's digital advertising market is growing 18% year-on-year. Agri-sector brands have no premium digital channel for placement. We are building that channel.</div>
+          <div class="mkt-sub">Africa's digital advertising market is growing 18% year-on-year. Agri-sector brands have no premium digital channel for placement. That is the channel GroundProfile has built.</div>
         </div>
       </div>
     </div>
@@ -1089,6 +1374,38 @@
           </div>
         </div>
       </div>
+
+      <div class="rev-seq r">
+        <p class="rev-seq-label">Revenue sequence</p>
+        <div class="rev-seq-steps">
+          <div class="rev-step">
+            <div class="rev-phase">Phase 1 · Launch</div>
+            <div class="rev-streams">
+              <span>Sponsored farmer stories</span>
+              <span>Brand content partnerships</span>
+              <span>Agri-brand placements</span>
+            </div>
+          </div>
+          <div class="rev-div">→</div>
+          <div class="rev-step">
+            <div class="rev-phase">Phase 2 · Growth</div>
+            <div class="rev-streams">
+              <span>B2B intelligence subscriptions</span>
+              <span>Premium farmer profiles</span>
+              <span>Newsletter monetisation</span>
+            </div>
+          </div>
+          <div class="rev-div">→</div>
+          <div class="rev-step">
+            <div class="rev-phase">Phase 3 · Scale</div>
+            <div class="rev-streams">
+              <span>Marketplace commissions</span>
+              <span>Data licensing</span>
+              <span>Investor matching tools</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -1097,18 +1414,28 @@
     <div class="container">
       <div class="tract-grid">
         <div>
-          <p class="section-eyebrow ey-green r">Where We Are</p>
+          <p class="section-eyebrow ey-green r">Traction &amp; Signals</p>
           <h2 class="tract-head r">
-            Infrastructure built.<br>Engine ready.<br>Raising to launch.
+            Platform complete.<br>Signals clear.<br>Ready to launch.
           </h2>
           <p class="tract-sub r">
-            We built the full platform before seeking capital. The editorial suite,
-            content pipeline, and automation engine are complete. We are raising
-            to take GroundProfile public and grow the audience it deserves.
+            We built the full platform before seeking capital — validating our ability to execute.
+            The editorial suite, content pipeline, and automation engine are complete.
+            Pre-seed funding takes us from built to publicly launched.
           </p>
           <a href="mailto:azeez@farmpady.com?subject=GroundProfile%20%E2%80%94%20Schedule%20a%20Call" class="btn-gold r" style="display:inline-flex;">
             Schedule a Call →
           </a>
+          <div class="fund-use r" style="margin-top:32px;">
+            <p class="fund-label">Pre-seed funding deploys to</p>
+            <ul class="fund-list">
+              <li>Onboard first 50 farmer profiles</li>
+              <li>Launch platform publicly + SEO content push</li>
+              <li>Sign first 3 brand partners</li>
+              <li>Grow email list to 5,000 subscribers</li>
+              <li>First editorial + growth hire</li>
+            </ul>
+          </div>
         </div>
         <div class="checklist">
           <div class="chk r">
